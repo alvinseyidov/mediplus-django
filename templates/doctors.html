@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+  {% for doctor in doctors %}
+    {{doctor.first_name}} {{doctor.last_name}} <img src="{{ doctor.profile_image.url }}" width="auto" height="100"/><br>
+  {% endfor %}
+
+</body>
+</html>

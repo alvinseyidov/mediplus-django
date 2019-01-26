@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from doctors import views
+from django.conf.urls.static import static
+from django.conf import settings
+from doctors.views import ListDoctorsView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('doctors/', views.doctors_list, name='doctors'),
+    path('api/doctors/', ListDoctorsView.as_view(), name="doctors-all")
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
