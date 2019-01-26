@@ -11,5 +11,5 @@ class ListDoctorsView(generics.ListAPIView):
 def doctors_list(request):
     MAX_OBJECTS = 20
     doctors = Doctors.objects.all()[:MAX_OBJECTS]
-    data = {"results": list(doctors.values("first_name", "last_name", "profile_image"))}
-    return JsonResponse(data)
+    data = list(doctors.values("id","first_name", "last_name", "profile_image"))
+    return JsonResponse(data, safe=False)
