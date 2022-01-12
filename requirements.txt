@@ -10,7 +10,7 @@ djangorestframework==3.9.0
 gunicorn==19.9.0
 idna==2.7
 Pillow==5.3.0
-pipenv==2018.11.26
+pipenv==2022.1.8
 psycopg2==2.7.6.1
 pycosat==0.6.3
 pycparser==2.18
